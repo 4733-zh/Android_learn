@@ -33,7 +33,7 @@ public class Demo10 extends AppCompatActivity {
                 Intent intent = new Intent("com.example.demo10.MY_BROADCAST");
                 intent.setComponent(new ComponentName("com.example.demo10","com.example.demo10.MyBroadcastReceiver"));
 
-                sendBroadcast(intent);
+                sendOrderedBroadcast(intent,null);
             }
         });
 
