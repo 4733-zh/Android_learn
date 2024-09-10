@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/demo10" />
             <option value="$PROJECT_DIR$/demo11" />
             <option value="$PROJECT_DIR$/demo12" />
+            <option value="$PROJECT_DIR$/filepersistencetest" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

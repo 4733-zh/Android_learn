@@ -54,13 +54,10 @@ public class BaseActivity extends AppCompatActivity {
             builder.setTitle("Warning");
             builder.setMessage("You are forced to be offline.Please try to login again.");
             builder.setCancelable(false);
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    ActivityCollector.finishAll();
-                    Intent intent1 = new Intent(context, LoginActivity.class);
-                    context.startActivity(intent1);
-                }
+            builder.setPositiveButton("OK", (dialogInterface, i) -> {
+                ActivityCollector.finishAll();
+                Intent intent1 = new Intent(context, LoginActivity.class);
+                context.startActivity(intent1);
             });
             builder.show();
         }
