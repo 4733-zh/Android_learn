@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/databasetest" />
             <option value="$PROJECT_DIR$/demo10" />
             <option value="$PROJECT_DIR$/demo11" />
             <option value="$PROJECT_DIR$/demo12" />
