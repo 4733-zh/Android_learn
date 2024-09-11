@@ -1,6 +1,8 @@
 package com.example.litepaltest;
 
-public class Book {
+import org.litepal.crud.LitePalSupport;
+
+public class Book extends LitePalSupport {
     private String press;
     private int id;
     private String author;
