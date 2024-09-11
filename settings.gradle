@@ -14,6 +14,7 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
         google()
         mavenCentral()
     }
@@ -27,3 +28,4 @@ include ':demo12'
 include ':filepersistencetest'
 include ':sharedperferencestest'
 include ':databasetest'
+include ':litepaltest'
