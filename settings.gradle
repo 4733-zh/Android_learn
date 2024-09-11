@@ -16,8 +16,10 @@ dependencyResolutionManagement {
     repositories {
         maven { url 'https://maven.aliyun.com/repository/public' }
         google()
+        jcenter()
         mavenCentral()
     }
+
 }
 
 rootProject.name = "Android_learn"
@@ -29,3 +31,4 @@ include ':filepersistencetest'
 include ':sharedperferencestest'
 include ':databasetest'
 include ':litepaltest'
+include ':greendaotest'
