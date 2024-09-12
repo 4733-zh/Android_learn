@@ -31,7 +31,7 @@ android {
 
 greendao{
         schemaVersion 1 // 数据库版本号
-        daoPackage 'com.example.greendaotest.greendao.gen'  // 设置 DaoMaster、DaoSession、Dao 包名
+        daoPackage 'com.example.greendaotest.greendao'  // 设置 DaoMaster、DaoSession、Dao 包名
         targetGenDir 'src/main/java'  // 设置 DaoMaster、DaoSession、Dao 目录
         }
 

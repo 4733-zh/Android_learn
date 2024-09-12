@@ -1,8 +1,8 @@
 package com.example.greendaotest;
 
 import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Generated;
 
 @Entity
 public class User {
@@ -10,6 +10,7 @@ public class User {
     private long id;
     private String name;
     private int age;
+
 
     @Generated(hash = 446251977)
     public User(long id, String name, int age) {
@@ -21,6 +22,7 @@ public class User {
     @Generated(hash = 586692638)
     public User() {
     }
+    
 
     public long getId() {
         return id;
