@@ -42,3 +42,4 @@ public class TestActivity extends Activity {
         return userDao.loadAll();// 查询所有记录
     }
 }
+

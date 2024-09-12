@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/androidthreadtest" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/databasetest" />
             <option value="$PROJECT_DIR$/demo10" />
@@ -17,6 +18,7 @@
             <option value="$PROJECT_DIR$/filepersistencetest" />
             <option value="$PROJECT_DIR$/greendaotest" />
             <option value="$PROJECT_DIR$/litepaltest" />
+            <option value="$PROJECT_DIR$/servicetest" />
             <option value="$PROJECT_DIR$/sharedperferencestest" />
           </set>
         </option>
