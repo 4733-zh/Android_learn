@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button unBindService = (Button)findViewById(R.id.unbind_service);
         bindService.setOnClickListener(this);
         unBindService.setOnClickListener(this);
+        Button startIntentService = (Button)findViewById(R.id.start_intent_service);
+        startIntentService.setOnClickListener(this);
 
     }
 
@@ -56,6 +59,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             bindService(bindIntent, connection, BIND_AUTO_CREATE);
         } else if (v.getId() == R.id.unbind_service) {
             unbindService(connection);
+        }else if (v.getId()==R.id.start_intent_service){
+            Log.d("MainActivity","Thread id is "+Thread.currentThread().getId());
+            Intent intent = new Intent(this,MyIntentService.class);
+            startService(intent);
         }
+
+
     }
 }
