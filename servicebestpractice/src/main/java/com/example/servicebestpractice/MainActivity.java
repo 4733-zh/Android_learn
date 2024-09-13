@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
         if (v.getId() == R.id.start_download) {
-            String url = "https://raw.githubsercontent.com/guolindev/eclipse/master/eclipse-inst-win64.exe";
+            String url = "https://www.jetbrains.com/zh-cn/idea/download/download-thanks.html?platform=macM1";
             downloadBinder.startDownload(url);
         }else if (v.getId() == R.id.pause_download) {
             downloadBinder.pauseDownload();
