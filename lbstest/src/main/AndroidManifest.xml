@@ -22,7 +22,7 @@
         android:theme="@style/Theme.Android_learn">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="ThmCsHwIR4n52KeinexDose5GIzaWByM"/>
+            android:value=""/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
