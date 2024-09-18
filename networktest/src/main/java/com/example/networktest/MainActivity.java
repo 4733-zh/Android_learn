@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,6 +34,7 @@ import java.net.URL;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.List;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
@@ -59,8 +63,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.send_request) {
-//            sendRequestWithHttpURLConnection();
-            sendRequestWithOkHttp();
+            sendRequestWithHttpURLConnection();
+//            sendRequestWithOkHttp();
         }
     }
 
@@ -78,12 +82,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     String responseData = response.body().string();
 //                    parseXMLWithPull(responseData);
 //                    parseXMLWithSAX(responseData);
-                    parseJSONWithJSONbject(responseData);
+//                    parseJSONWithJSONbject(responseData);
+                    parseJSONWithGSON(responseData);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }).start();
+    }
+
+    private void parseJSONWithGSON(String jsonData) {
+        Gson gson = new Gson();
+        List<App> appList = gson.fromJson(jsonData, new TypeToken<List<App>>() {}.getType());
+        for (App app:appList){
+            Log.d("MainActivity", "id is " + app.getId());
+            Log.d("MainActivity", "name is " + app.getName());
+            Log.d("MainActivity", "version is " + app.getVersion());
+        }
     }
 
     private void parseJSONWithJSONbject(String jsonData) {
@@ -154,37 +169,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         new Thread(new Runnable() {
             @Override
             public void run() {
-                HttpURLConnection connection = null;
-                BufferedReader reader = null;
-                try {
-                    URL url = new URL("https://www.baidu.com/");
-                    connection = (HttpURLConnection) url.openConnection();
-                    connection.setRequestMethod("GET");
-                    connection.setConnectTimeout(8000);
-                    connection.setReadTimeout(8000);
-                    InputStream in = connection.getInputStream();
-                    reader = new BufferedReader(new InputStreamReader(in));
-                    StringBuilder response = new StringBuilder();
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        response.append(line);
-                    }
-                    showResponse(response.toString());
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } finally {
-                    if (reader != null) {
-                        try {
-                            reader.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    if (connection != null) {
-                        connection.disconnect();
-                    }
-                }
+               String address = "http://www.baidu.com";
+               String method = "GET";
+               HttpUtil.sendHttpRequest(address,method);
             }
         }).start();
     }
