@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
@@ -68,17 +71,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 try {
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder()
-                           .url("http://192.168.3.22:80/get_data.xml")
+//                           .url("http://192.168.3.22:80/get_data.xml")
+                           .url("http://192.168.3.22:80/get_data.json")
                             .build();
                     Response response = client.newCall(request).execute();
                     String responseData = response.body().string();
 //                    parseXMLWithPull(responseData);
-                    parseXMLWithSAX(responseData);
+//                    parseXMLWithSAX(responseData);
+                    parseJSONWithJSONbject(responseData);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }).start();
+    }
+
+    private void parseJSONWithJSONbject(String jsonData) {
+        try {
+            JSONArray jsonArray = new JSONArray(jsonData);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                String id = jsonObject.getString("id");
+                String name = jsonObject.getString("name");
+                String version = jsonObject.getString("version");
+                Log.d("MainActivity", "id is " + id);
+                Log.d("MainActivity", "name is " + name);
+                Log.d("MainActivity", "version is " + version);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     private void parseXMLWithSAX(String xmlData) {
