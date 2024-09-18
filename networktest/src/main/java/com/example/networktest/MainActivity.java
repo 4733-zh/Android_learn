@@ -1,23 +1,35 @@
 package com.example.networktest;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+
+import org.xmlpull.v1.XmlPullParser;
+
+import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.SecureRandom;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -51,16 +63,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 try {
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder()
-                            .url("https://www.baidu.com/")
+                           .url("http://192.168.3.22:80/get_data.xml")
                             .build();
                     Response response = client.newCall(request).execute();
                     String responseData = response.body().string();
-                    showResponse(responseData);
+                    parseXMLWithPull(responseData);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }).start();
+    }
+
+    private void parseXMLWithPull(String xmlData) {
+        XmlPullParserFactory factory = null;
+        try {
+            factory = XmlPullParserFactory.newInstance();
+            XmlPullParser xmlPullParser = factory.newPullParser();
+            xmlPullParser.setInput(new StringReader(xmlData));
+            int eventType = xmlPullParser.getEventType();
+            String id = "";
+            String name = "";
+            String version = "";
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                String nodeName = xmlPullParser.getName();
+                if (eventType == XmlPullParser.START_TAG) {
+                    if ("id".equals(nodeName)) {
+                        id = xmlPullParser.nextText();
+                    } else if ("name".equals(nodeName)) {
+                        name = xmlPullParser.nextText();
+                    } else if ("version".equals(nodeName)) {
+                        version = xmlPullParser.nextText();
+                    }
+                } else if (eventType == XmlPullParser.END_TAG) {
+                    if ("app".equals(nodeName)) {
+                        Log.d("MainActivity", "id is " + id);
+                        Log.d("MainActivity", "name is " + name);
+                        Log.d("MainActivity", "version is " + version);
+                    }
+                }
+                eventType = xmlPullParser.next();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void sendRequestWithHttpURLConnection() {
