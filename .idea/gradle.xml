@@ -19,9 +19,11 @@
             <option value="$PROJECT_DIR$/greendaotest" />
             <option value="$PROJECT_DIR$/lbstest" />
             <option value="$PROJECT_DIR$/litepaltest" />
+            <option value="$PROJECT_DIR$/networktest" />
             <option value="$PROJECT_DIR$/servicebestpractice" />
             <option value="$PROJECT_DIR$/servicetest" />
             <option value="$PROJECT_DIR$/sharedperferencestest" />
+            <option value="$PROJECT_DIR$/webviewtest" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
