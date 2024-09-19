@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/androidthreadtest" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/cameraalbumtest" />
             <option value="$PROJECT_DIR$/databasetest" />
             <option value="$PROJECT_DIR$/demo10" />
             <option value="$PROJECT_DIR$/demo11" />
@@ -21,6 +22,7 @@
             <option value="$PROJECT_DIR$/litepaltest" />
             <option value="$PROJECT_DIR$/networktest" />
             <option value="$PROJECT_DIR$/notificationtest" />
+            <option value="$PROJECT_DIR$/playaudiotest" />
             <option value="$PROJECT_DIR$/servicebestpractice" />
             <option value="$PROJECT_DIR$/servicetest" />
             <option value="$PROJECT_DIR$/sharedperferencestest" />
