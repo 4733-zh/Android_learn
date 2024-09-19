@@ -77,12 +77,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mediaPlayer.start();
             }
         } else if (id == R.id.pause) {
-            if (!mediaPlayer.isPlaying()) {
+            if (mediaPlayer.isPlaying()) {
                 mediaPlayer.pause();
             }
         } else if (id == R.id.stop) {
-            if (!mediaPlayer.isPlaying()) {
+            if (mediaPlayer.isPlaying()) {
                 mediaPlayer.stop();
+                initMediaPlayer();
             }
         }
     }
