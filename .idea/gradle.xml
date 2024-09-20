@@ -11,11 +11,16 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/androidthreadtest" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/basequickadaptertest" />
+            <option value="$PROJECT_DIR$/bluetoothtest" />
+            <option value="$PROJECT_DIR$/bundlefragment" />
+            <option value="$PROJECT_DIR$/bundletest" />
             <option value="$PROJECT_DIR$/cameraalbumtest" />
             <option value="$PROJECT_DIR$/databasetest" />
             <option value="$PROJECT_DIR$/demo10" />
             <option value="$PROJECT_DIR$/demo11" />
             <option value="$PROJECT_DIR$/demo12" />
+            <option value="$PROJECT_DIR$/drawabletest" />
             <option value="$PROJECT_DIR$/filepersistencetest" />
             <option value="$PROJECT_DIR$/greendaotest" />
             <option value="$PROJECT_DIR$/lbstest" />
@@ -24,6 +29,7 @@
             <option value="$PROJECT_DIR$/notificationtest" />
             <option value="$PROJECT_DIR$/playaudiotest" />
             <option value="$PROJECT_DIR$/playvideotest" />
+            <option value="$PROJECT_DIR$/runtimepermissiontest" />
             <option value="$PROJECT_DIR$/servicebestpractice" />
             <option value="$PROJECT_DIR$/servicetest" />
             <option value="$PROJECT_DIR$/sharedperferencestest" />
