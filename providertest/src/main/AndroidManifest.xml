@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <queries>
-        <package android:name="com.example.databasetest" />
+<!--    <queries>-->
+<!--&lt;!&ndash;        <package android:name="com.example.databasetest" />&ndash;&gt;-->
 
-        <!-- 也可以单独指定provider -->
+<!--        &lt;!&ndash; 也可以单独指定provider &ndash;&gt;-->
 <!--        <provider android:authorities="com.example.databasetest.provider" />-->
+<!--    </queries>-->
+    <queries>
+        <package android:name="com.example.databasetest"/>
     </queries>
+
     <uses-permission android:name="android.permission.READ_USER_DICTIONARY"/>
     <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY"/>
 

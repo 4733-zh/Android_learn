@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <queries>
-        <package android:name="com.example.databasetest" />
-
-        <!-- 也可以单独指定provider -->
-                <provider android:authorities="com.example.databasetest.provider" />
-    </queries>
-    <uses-permission android:name="android.permission.READ_USER_DICTIONARY"/>
-    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY"/>
-
-
     <application
         android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
