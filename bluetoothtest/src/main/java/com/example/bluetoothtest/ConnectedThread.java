@@ -14,7 +14,7 @@ import java.util.Arrays;
  * 1、发送数据
  * 2、接收数据
  */
-public class ConnectedThread extends Thread{
+public class  ConnectedThread extends Thread{
     private static final String TAG = "ConnectedThread";
     private BluetoothSocket mmSocket;
     private InputStream mmInStream;

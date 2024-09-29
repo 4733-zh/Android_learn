@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Request request = new Request.Builder()
 //                           .url("http://192.168.3.22:80/get_data.xml")
                            .url("http://192.168.3.22:80/get_data.json")
+//                           .url("https://www.baidu.com")
                             .build();
                     Response response = client.newCall(request).execute();
                     String responseData = response.body().string();
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                    parseXMLWithSAX(responseData);
 //                    parseJSONWithJSONbject(responseData);
                     parseJSONWithGSON(responseData);
+//                    showResponse(responseData);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
